@@ -166,5 +166,5 @@ document.getElementById('sendBtn').addEventListener('click', () => {
   });
 });
 
-// Первоначальная отрисовка
+// Первоначальная отрисовкаs
 drawMap();
