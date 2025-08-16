@@ -1,40 +1,168 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Автоматизированная лодка</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    canvas {
-      border: 1px solid #ccc;
-      width: 100%;
-      height: 80vh;
-      max-width: 800px;
-      max-height: 600px;
-      cursor: grab;
-    }
-    button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
-      cursor: pointer;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aeronavis</title>
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <h1>Автоматизированная лодка</h1>
-  <canvas id="mapCanvas"></canvas>
-  <button id="sendBtn">Отправить лодку</button>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <img src="aeronavis-logo.png" alt="Aeronavis Logo" />
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="map.html"><i class="fas fa-map-marked-alt"></i> Карта</a></li>
+                    <li><a href="documentation.html"><i class="fas fa-file-alt"></i> Документация</a></li>
+                    <li><a href="#"><i class="fas fa-mobile-alt"></i> Приложение</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-  <script src="script.js"></script>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="content fade-in">
+            <h1>AERONAVIS</h1>
+            <p>
+                Новая система для четкого и простого контроля качества водной среды с помощью автоматических лодок "Водный пчёл"
+            </p>
+            <button class="learn-more-btn">
+                <i class="fas fa-info-circle"></i> Узнать больше
+            </button>
+        </div>
+        <div class="boat-image fade-in">
+            <img src="boat-image.png" alt="Boat Image" />
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <h2 class="fade-in">Что это за система?</h2>
+        <p class="subtitle fade-in">
+            AERONAVIS – проект, который дает возможность любому человеку или компании отслеживать уровень качества воды в реках или озёрах без раздумий
+        </p>
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <h3>Автоматически</h3>
+                <p>Вам достаточно подключить лодку и настроить маршрут на нашем сайте</p>
+            </div>
+            <div class="feature-card fade-in">
+                <h3>Удобно</h3>
+                <p>Все измерения сразу сгружаются в облако и отображаются в удобных и понятных графиках</p>
+            </div>
+            <div class="feature-card fade-in">
+                <h3>Качественно</h3>
+                <p>Показания дают надежные датчики, а общая оценка основывается на наших исследованиях</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Offline & Data Section -->
+    <section class="offline-section">
+        <div class="map-container">
+            <img src="nature-bg.jpg" alt="Nature Background" class="map-bg" />
+            <div class="map-overlay-center fade-in">
+                <h2>В любых условиях без перебоев</h2>
+                <div class="two-column">
+                    <div class="column left">
+                        <h3>Локальная система</h3>
+                        <p>Программное обеспечение лодки полностью локальное и не зависит от подключения к интернету</p>
+                    </div>
+                    <div class="column right">
+                        <h3>Хранение данных</h3>
+                        <p>Безопасная передача данных между лодкой и сервером и локальное хранение до выгрузки информации</p>
+                    </div>
+                </div>
+                <div class="bottom-text">
+                    <h3>Оффлайн управление</h3>
+                    <p>Наше автономное PWA приложение для телефонов позволяет подключиться к лодке без интернет соединения, управлять ей напрямую, скачивать данные и тому подобное</p>
+                    <button class="pwa-btn">
+                        <i class="fas fa-info-circle"></i> Подробнее про PWA
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Conducts Measurements Section -->
+    <section class="measurement-section">
+        <div class="container">
+            <h2 class="fade-in">Кто проводит измерения?</h2>
+            <p class="subtitle fade-in">Наш Водный пчёл – ваш надёжный работник</p>
+
+            <!-- Tabs -->
+            <div class="tabs fade-in">
+                <button class="tab-btn active">Экологичный</button>
+                <button class="tab-btn">Автономный</button>
+                <button class="tab-btn">Точный</button>
+                <button class="tab-btn">Продуманный</button>
+            </div>
+
+            <!-- Placeholder for future infographic -->
+            <p class="placeholder-text fade-in" style="color: #666; font-size: 14px; margin: 30px 0;">
+                инфографика мощная
+            </p>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="map-section">
+        <div class="map-container">
+            <img src="map-image.jpg" alt="Interactive Map" class="map-bg" />
+            <div class="map-overlay-left fade-in">
+                <h3>Посмотрите сами</h3>
+                <p>На нашей онлайн-карте в реальном времени вы сами можете изучить открытие показания с лодок</p>
+                <p>Достаточно нажать на интересующую метку и вы увидите подробные показания со станции и маршрут движения лодки</p>
+                <a href="map.html">
+                    <button class="open-map-btn">
+                    <i class="fas fa-map-marker-alt"></i> Открыть карту
+                </button>
+                </a>
+            </div>
+            <!-- Location Pin -->
+            <div class="location-pin-green fade-in">
+                <div class="pin-circle-green">
+                    <span>87</span>
+                </div>
+            </div>
+            <div class="location-pin-red fade-in">
+                <div class="pin-circle-red">
+                    <span>14</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fade-In Animation Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fadeElements = document.querySelectorAll('.fade-in');
+
+            const fadeInObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.15, // Trigger when 15% of element is visible
+                rootMargin: '0px 0px -50px 0px' // Slight buffer before trigger
+            });
+
+            fadeElements.forEach(el => {
+                fadeInObserver.observe(el);
+            });
+        });
+    </script>
 
 </body>
 </html>

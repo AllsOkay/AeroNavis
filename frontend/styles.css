@@ -1,0 +1,807 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #000;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo img {
+    height: 30px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+nav ul li a i {
+    margin-right: 5px;
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 100px;
+    min-height: 920px;
+    background: linear-gradient(to right, #f0f0f0, #0096ff);
+}
+
+.content {
+    max-width: 50%;
+}
+
+.content h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.content p {
+    font-size: 24px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.learn-more-btn {
+    background-color: #0096ff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.learn-more-btn:hover {
+    background-color: #0077cc;
+}
+
+.boat-image img {
+    max-width: 90%;
+    height: auto;
+    border-radius: 10px;
+    margin-left: 10%;
+}
+
+/* Features Section */
+.features-section {
+    padding: 130px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    height: 920px;
+}
+
+.features-section h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.subtitle {
+    font-size: 21px;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    padding: 35px;
+    width: 30%;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    height: 300px;
+    margin-top: 15px;
+    background-color: white;
+}
+
+/* Background Image Layer (Always Visible) */
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    filter: brightness(0.6);
+}
+
+/* Hover Effect */
+.feature-card:hover {
+    border: none;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    transform: scale(1.02);
+}
+
+.feature-card:hover::before {
+    opacity: 1;
+}
+
+/* Text Layer (On Top) */
+.feature-card h3{
+    position: relative;
+    z-index: 2;
+    color: #161616;
+    margin-top: 15%;
+    line-height: 1.4;
+    transition: color 0.4s ease;
+}
+
+.feature-card p {
+    position: relative;
+    z-index: 2;
+    color: #333;
+    margin: 0;
+    line-height: 1.4;
+    transition: color 0.4s ease;
+    text-align: center;
+}
+
+.feature-card:hover h3,
+.feature-card:hover p {
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.feature-card h3 {
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.feature-card p {
+    font-size: 18px;
+    text-align: center;
+}
+
+/* Different backgrounds for each card */
+.feature-card:nth-child(1)::before {
+    background-image: url('automatically-bg.jpg');
+}
+
+.feature-card:nth-child(2)::before {
+    background-image: url('conveniently-bg.jpg');
+}
+
+.feature-card:nth-child(3)::before {
+    background-image: url('quality-bg.jpg');
+}
+
+/* Offline & Data Section */
+.offline-section,
+.map-section {
+    margin-top: 10px;
+    padding: 40px 10px;
+    background-color: #f9f9f9;
+}
+
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 920px;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.map-bg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: brightness(0.8) contrast(1.2) saturate(1.1);
+}
+
+/* Solid Dark Overlay */
+.map-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Centered Text Overlay */
+.map-overlay-center {
+    position: absolute;
+    top: 20%;
+    left: 22%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    max-width: 1000px;
+    z-index: 2;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.map-overlay-center h2 {
+    font-size: 50px;
+    margin-bottom: 30px;
+    margin-right: 60px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* Columns: Left and Right */
+.two-column {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 70px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 100px;
+    max-width: 90%;
+}
+
+.column {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: center;
+}
+
+.column.left,
+.column.right {
+    margin: 0;
+}
+
+.column h3 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.column p {
+    font-size: 18px;
+    color: #ccc;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    text-align: center;
+}
+
+/* Bottom Center Section */
+.bottom-text {
+    text-align: center;
+    margin-top: 50px;
+    width: 90%;
+}
+
+.bottom-text h3 {
+    font-size: 28px;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.bottom-text p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #ccc;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.pwa-btn {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid #fff;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.pwa-btn:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Measurement Section */
+.measurement-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.measurement-section .container {
+    max-width: 1000px;
+    height: 920px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.measurement-section h2 {
+    font-size: 36px;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 40px 0;
+    flex-wrap: wrap;
+}
+
+.tab-btn {
+    border: 1px solid #ccc;
+    background-color: white;
+    color: #333;
+    padding: 8px 16px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.tab-btn:hover {
+    background-color: #f0f0f0;
+}
+
+.tab-btn.active {
+    border-color: #0096ff;
+    background-color: #e6f7ff;
+    color: #0096ff;
+}
+
+.placeholder-text {
+    color: #666;
+    font-size: 14px;
+    margin: 30px 0;
+}
+
+/* Map Section */
+.map-section .map-container::before {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.9), transparent);
+}
+
+.map-overlay-left {
+    position: absolute;
+    top: 20%;
+    left: 15%;
+    transform: translateY(-50%);
+    color: white;
+    padding: 20px;
+    max-width: 40%;
+    height: 920px;
+    z-index: 2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+.map-overlay-left h3 {
+    font-size: 50px;
+    margin-bottom: 15px;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.map-overlay-left p {
+    color: #ccc;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.open-map-btn {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.2));
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.open-map-btn:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.3));
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+}
+
+/* Location Pin */
+.location-pin-green {
+    position: absolute;
+    right: 28%;
+    bottom: 25%;
+    transform: translateX(-50%);
+    z-index: 10;
+    animation: pulse 2s infinite;
+}
+
+.location-pin-red {
+    position: absolute;
+    right: 35%;
+    bottom: 42%;
+    transform: translateX(-50%);
+    z-index: 10;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.05); }
+    100% { transform: translateX(-50%) scale(1); }
+}
+
+.pin-circle-green {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border: 4px solid #00c853;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #000;
+    font-size: 18px;
+    border-radius: 50% 50% 50% 10%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 200, 83, 0.4);
+    transform: rotate(-45deg);
+}
+
+.pin-circle-red {
+    width: 60px;
+    height: 60px;
+    background: white;
+    border: 4px solid #c80000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #000;
+    font-size: 18px;
+    border-radius: 50% 50% 50% 10%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3), 0 0 20px rgba(0, 200, 83, 0.4);
+    transform: rotate(-45deg);
+}
+
+/* --- Fade-In Animation on Scroll --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+    .content {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+    .boat-image img {
+        max-width: 80%;
+        margin-top: 20px;
+    }
+
+    .features-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature-card {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    .two-column {
+        flex-direction: column;
+    }
+
+    .column {
+        margin-bottom: 20px;
+    }
+
+    .column.left,
+    .column.right {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .measurement-section .container {
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .map-overlay-left {
+        left: 10%;
+        max-width: 80%;
+    }
+
+    .location-pin {
+        right: 15%;
+        bottom: 15%;
+    }
+
+    .map-container {
+        height: 400px;
+    }
+
+    .tabs {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* =================================================================== */
+/* ============= СТИЛИ ДЛЯ КАРТЫ (map.html) =========================== */
+/* =================================================================== */
+
+/* Контейнер карты */
+#map-container {
+    margin-top: 70px;
+    height: calc(100vh - 70px);
+    width: 100%;
+    position: relative;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Правая панель — детали лодки */
+.details-panel {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 400px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.details-panel .header {
+    margin-bottom: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.details-panel h3 {
+    margin: 0;
+    color: #000;
+    font-size: 18px;
+}
+
+.status-bar {
+    display: flex;
+    gap: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+/* Управление лодкой */
+.boat-controls {
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border: 1px solid #e9ecef;
+}
+
+.boat-controls button {
+    background-color: #0096ff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 5px;
+    width: 100%;
+}
+
+.boat-controls button:hover {
+    background-color: #0077cc;
+}
+
+.status {
+    margin-top: 10px;
+    font-size: 13px;
+    color: #555;
+}
+
+/* Данные сенсоров */
+.point-info {
+    margin-bottom: 0;
+}
+
+.water-params {
+    margin-top: 10px;
+}
+
+.param {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.param span {
+    color: #333;
+}
+
+.value {
+    font-weight: 500;
+}
+
+/* Время обновления */
+.last-update {
+    font-size: 12px;
+    color: #888;
+    text-align: right;
+}
+
+/* Значок лодки */
+.boat-icon {
+    font-size: 32px;
+    text-align: center;
+    line-height: 1;
+}
+
+/* Цель */
+.target-marker {
+    font-size: 28px;
+    text-align: center;
+    line-height: 1;
+}
+
+/* Правая панель — flex для правильного отображения */
+.details-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Стиль булавки для индикаторов */
+.pin-circle {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border: 3px solid #00c853; /* Зелёная рамка (можно менять по оценке) */
+    border-radius: 50% 50% 50% 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #000;
+    font-size: 16px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    transform: rotate(-45deg);
+    text-align: center;
+    line-height: 1;
+    position: relative;
+}
+
+/* Цвета булавок по оценке */
+.pin-circle.green {
+    border-color: #00c853;
+}
+
+.pin-circle.yellow {
+    border-color: #ffeb3b;
+}
+
+.pin-circle.orange {
+    border-color: #ff9800;
+}
+
+.pin-circle.red {
+    border-color: #f44336;
+}
+
+.pin-circle.gray {
+    border-color: #9e9e9e;
+    color: #777;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .details-panel {
+        width: 90%;
+        right: 5%;
+        left: 5%;
+        max-height: 80vh;
+        overflow-y: auto;
+        font-size: 13px;
+    }
+
+    .boat-controls button {
+        font-size: 14px;
+    }
+}
